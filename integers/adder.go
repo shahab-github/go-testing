@@ -4,3 +4,12 @@ package integers
 func Add(x, y int) int {
 	return x + y
 }
+
+// Sum takes integers and return thier sum
+func Sum(numbers [5]int) int {
+	result := 0
+	for i := 0; i < 5; i++ {
+		result += numbers[i]
+	}
+	return result
+}
