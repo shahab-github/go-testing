@@ -6,7 +6,7 @@ func Add(x, y int) int {
 }
 
 // Sum takes integers and return thier sum
-func Sum(numbers [5]int) int {
+func Sum(numbers []int) int {
 	result := 0
 	for _, number := range numbers {
 		result += number
