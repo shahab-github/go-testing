@@ -13,3 +13,7 @@ func Sum(numbers []int) int {
 	}
 	return result
 }
+
+func SumAll(numbersToSum ...[]int) []int {
+	return nil
+}
