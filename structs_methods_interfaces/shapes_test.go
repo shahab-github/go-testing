@@ -29,25 +29,43 @@ func TestPerimeter(t *testing.T) {
 // 	}
 // }
 
+// Refactor to below
+// func TestArea(t *testing.T) {
+
+// 	checkArea := func (t testing.TB, shape Shape, want) {
+// 		t.Helper()
+// 		got := shape.Area()
+// 		if got!= want {
+// 			t.Errorf("got %g, want %g", got, want)
+// 		}
+// 	}
+
+// 	t.Run("rectangle", func(t *testing.T) {
+// 		rectangle := Rectangle{10.0, 10.0}
+// 		checkArea(t, rectangle, 100.0)
+// 	})
+
+// 	t.Run("circle", func(t *testing.T) {
+// 		circle := Circle{10}
+// 		checkArea(t, circle, 314.0)
+// 	})
+// }
+
+// Again refactor to below
 func TestArea(t *testing.T) {
 
-	t.Run("rectangle", func(t *testing.T) {
-		rect := Rectangle{10.0, 10.0}
-		got := rect.Area()
-		want := 100.0
+	areaTest := []struct {
+		shape Shape
+		want  float64
+	}{
+		{Rectangle{12, 6}, 72.0},
+		{Circle{10}, 314.0},
+	}
 
-		if got != want {
-			t.Errorf("got %.2f but want %.2f", got, want)
+	for _, tt := range areaTest {
+		got := tt.shape.Area()
+		if got != tt.want {
+			t.Errorf("got %g, want %g", got, tt.want)
 		}
-	})
-
-	t.Run("circle", func(t *testing.T) {
-		circle := Circle{10}
-		got := circle.Area()
-		want := 314.0
-
-		if got != want {
-			t.Errorf("got %.2f but want %.2f", got, want)
-		}
-	})
+	}
 }

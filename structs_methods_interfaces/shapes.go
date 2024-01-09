@@ -1,5 +1,9 @@
 package shapes
 
+type Shape interface {
+	Area() float64
+}
+
 type Rectangle struct {
 	width  float64
 	height float64
