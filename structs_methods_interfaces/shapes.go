@@ -5,10 +5,18 @@ type Rectangle struct {
 	height float64
 }
 
-func Perimeter(rectangle Rectangle) float64 {
-	return 2 * (rectangle.height + rectangle.width)
+type Circle struct {
+	radius float64
 }
 
-func Area(rectangle Rectangle) float64 {
-	return rectangle.height * rectangle.width
+func (r Rectangle) Perimeter() float64 {
+	return 2 * (r.height + r.width)
+}
+
+func (r Rectangle) Area() float64 {
+	return r.height * r.width
+}
+
+func (c Circle) Area() float64 {
+	return 3.14 * c.radius * c.radius
 }
