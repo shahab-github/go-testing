@@ -23,3 +23,7 @@ type Stringer interface {
 func (b Bitcoin) String() string {
 	return fmt.Sprintf("%d BTC", b)
 }
+
+func (w *Wallet) Withdraw(amount Bitcoin) {
+	w.balance -= amount
+}
