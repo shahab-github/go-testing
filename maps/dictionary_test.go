@@ -15,13 +15,13 @@ import "testing"
 
 // refactor to below
 
-func TestSearch(t *testing.T) {
-	dictionary := map[string]string{"test": "this is just a test"}
+// func TestSearch(t *testing.T) {
+// 	dictionary := map[string]string{"test": "this is just a test"}
 
-	got := Search(dictionary, "test")
-	want := "this is just a test"
-	assertString(t, got, want)
-}
+// 	got := Search(dictionary, "test")
+// 	want := "this is just a test"
+// 	assertString(t, got, want)
+// }
 
 func assertString(t testing.TB, got, want string) {
 	t.Helper()
@@ -29,4 +29,12 @@ func assertString(t testing.TB, got, want string) {
 	if got != want {
 		t.Errorf("Got %q want %q", got, want)
 	}
+}
+
+func TestSearch(t *testing.T) {
+	dictionary := Dictionary{"test": "this is just a test"}
+
+	got := dictionary.Search("test")
+	want := "this is just a test"
+	assertString(t, got, want)
 }
