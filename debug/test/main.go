@@ -20,6 +20,9 @@ func main() {
 
 	calculate := sum(1, 2, 3, 4, 5, 6, 7, 8, 9)
 	fmt.Println(calculate)
+
+	fac := factorial(10)
+	fmt.Println(fac)
 }
 
 func sum(numbers ...int) int {
@@ -28,4 +31,14 @@ func sum(numbers ...int) int {
 		sum += number
 	}
 	return sum
+}
+
+// factorial function calculates the factorial of a given number n
+func factorial(n int) int {
+	// Base case: factorial of 0 is 1
+	if n == 0 {
+		return 1
+	}
+	// Recursive case: n! = n * (n-1)!
+	return n * factorial(n-1)
 }
