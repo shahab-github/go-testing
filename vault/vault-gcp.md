@@ -17,3 +17,20 @@ vault write gcp/roleset/my-token-roleset \
   token_scopes="https://www.googleapis.com/auth/cloud-platform" \
   bindings=@mybindings.hcl
 ```
+
+### sample command
+```
+curl -X 'POST' \
+  'http://54.160.189.39:8200/v1/gcp/roleset/testroleset' \
+  -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -H 'X-Vault-Token: myroot' \
+  -d '{
+  "bindings": "resource \"//cloudresourcemanager.googleapis.com/projects/clgcporg8-068\" { \n\t roles = [\n\"roles/viewer\", \n] \n}",
+  "project": "clgcporg8-068",
+  "secret_type": "access_token",
+  "token_scopes": [
+    "https://www.googleapis.com/auth/cloud-platform"
+  ]
+}'
+```
