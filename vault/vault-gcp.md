@@ -34,3 +34,6 @@ curl -X 'POST' \
   ]
 }'
 ```
+
+## medium page for gcp vault configuration
+https://marco-urrea.medium.com/hashicorp-vault-gcp-secrets-engine-70813983e33a
