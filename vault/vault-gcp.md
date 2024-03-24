@@ -90,3 +90,15 @@ roles = ["roles/viewer"]
 }
 EOF
 ```
+
+### sample json payload
+```json
+{
+  "bindings": "resource \"//cloudresourcemanager.googleapis.com/projects/vault679\" { \n\t roles = [\n\"roles/viewer\", \n] \n}",
+  "project": "vault679",
+  "secret_type": "access_token",
+  "token_scopes": [
+    "https://www.googleapis.com/auth/cloud-platform"
+  ]
+}
+```
